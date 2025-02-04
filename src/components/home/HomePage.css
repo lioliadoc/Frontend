@@ -1,0 +1,29 @@
+
+/* HomePage.css */
+
+/* Container for the main page content */
+
+
+/* Title styling */
+.homepage-title {
+  font-size: 5rem;
+  font: bold;
+  font-style: brush-script MT;
+  text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  margin-left: 25rem;
+}
+
+
+.homepage-image {
+  max-width: 300px;  
+  height: auto;     
+  margin-top: 20px;  
+  margin-bottom: 20px
+}
+
+.black-link {
+  color: black !important;
+  text-decoration: none;
+}
