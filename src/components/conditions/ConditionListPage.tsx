@@ -45,6 +45,10 @@ function ConditionListPage() {
     }
   }, [searchTerm]);
 
+  useEffect(() => {
+    console.log("In ConditionListPage, the API_URL is:", API_URL);
+  }, []);
+
   const handleImagesClick = (conditionId: number) => {
     axios
       .get(`${API_URL}/conditions/${conditionId}/images`)
