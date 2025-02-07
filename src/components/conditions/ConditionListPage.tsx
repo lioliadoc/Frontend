@@ -7,6 +7,8 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
+const API_URL = import.meta.env.VITE_API_URL; 
+
 interface Condition {
   id: number;
   condition_name: string;
@@ -25,7 +27,7 @@ function ConditionListPage() {
   useEffect(() => {
     if (searchTerm) {
       axios
-        .get("http://127.0.0.1:5000/conditions/search", {
+        .get(`${API_URL}/conditions/search`, {
           params: { symptom: searchTerm },
         })
         .then((response) => {
@@ -45,7 +47,7 @@ function ConditionListPage() {
 
   const handleImagesClick = (conditionId: number) => {
     axios
-      .get(`http://127.0.0.1:5000/conditions/${conditionId}/images`)
+      .get(`${API_URL}/conditions/${conditionId}/images`)
       .then((response) => {
         if (response.data.images) {
           setSelectedImages(response.data.images);

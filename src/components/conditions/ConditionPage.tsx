@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Alert, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function ConditionPage() {
   const { conditionId } = useParams();
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ function ConditionPage() {
     const fetchCondition = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://127.0.0.1:5000/conditions/${conditionId}`);
+        const response = await fetch(`${API_URL}/conditions/${conditionId}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

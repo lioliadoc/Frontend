@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Row, Col, Form, Button, ListGroup } from "react-bootstrap";
 
-// Interface for a story
+const API_URL = import.meta.env.VITE_API_URL;
+
 interface Story {
   id: number;
   name: string;
@@ -12,24 +13,24 @@ interface Story {
 }
 
 function StoriesPage() {
-  // Form inputs
+
   const [storyName, setStoryName] = useState("");
   const [storyText, setStoryText] = useState("");
 
-  // List of stories
+  
   const [stories, setStories] = useState<Story[]>([]);
   
-  // For error or status messages
+  
   const [errorMessage, setErrorMessage] = useState("");
 
-  // 1. Fetch stories on mount (sorted client-side by date desc)
+ 
   useEffect(() => {
     fetchAllStories();
   }, []);
 
   const fetchAllStories = () => {
     axios
-      .get("http://127.0.0.1:5000/stories")
+      .get(`${API_URL}/stories`)
       .then((response) => {
         if (response.data && response.data.stories) {
           // Sort by newest first
@@ -46,7 +47,7 @@ function StoriesPage() {
       });
   };
 
-  // 2. Handle form submission to create a new story
+ 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (!storyName.trim() || !storyText.trim()) {
@@ -54,16 +55,16 @@ function StoriesPage() {
       return;
     }
 
-    // Adjust user_id or like_count as needed in your app
+    
     const newStory = {
       name: storyName.trim(),
       text: storyText.trim(),
-      user_id: 1,         // For example if your system requires a user_id
+      user_id: 1,         
       like_count: 0
     };
 
     axios
-      .post("http://127.0.0.1:5000/stories", newStory)
+      .post(`${API_URL}/stories`, newStory)
       .then((res) => {
         // Clear form
         setStoryName("");
@@ -77,12 +78,12 @@ function StoriesPage() {
       });
   };
 
-  // 3. Handle like button
+  
   const handleLike = (storyId: number) => {
     axios
-      .put(`http://127.0.0.1:5000/stories/${storyId}/like`)
+      .put(`${API_URL}/stories/${storyId}/like`)
       .then((res) => {
-        // Update local state: increment the like for that story
+        
         setStories((prevStories) =>
           prevStories.map((story) =>
             story.id === storyId ? { ...story, like_count: story.like_count + 1 } : story
@@ -98,12 +99,12 @@ function StoriesPage() {
   return (
     <Container fluid className="py-4">
       <Row>
-        {/* LEFT SIDE: Form to create a story */}
+        
         <Col xs={12} md={6} className="mb-4">
           <h2>Add Your Story</h2>
           {errorMessage && <p className="text-danger">{errorMessage}</p>}
           <Form onSubmit={handleSubmit}>
-            {/* Story Name */}
+            
             <Form.Group controlId="storyName" className="mb-3">
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -114,7 +115,7 @@ function StoriesPage() {
               />
             </Form.Group>
 
-            {/* Story Text */}
+            
             <Form.Group controlId="storyText" className="mb-3">
               <Form.Label>Story</Form.Label>
               <Form.Control
@@ -132,7 +133,6 @@ function StoriesPage() {
           </Form>
         </Col>
 
-        {/* RIGHT SIDE: Display all stories (sorted by date) */}
         <Col xs={12} md={6}>
           <h2>All Stories</h2>
           {stories.length === 0 && (
