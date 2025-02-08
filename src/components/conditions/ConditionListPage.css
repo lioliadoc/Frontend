@@ -1,0 +1,13 @@
+.condition-link {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.2s ease-in-out; 
+  }
+  
+  /* Hover style */
+  .condition-link:hover {
+    color: gray;         
+    font-size: 1.3em;     
+    
+  }

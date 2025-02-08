@@ -45,10 +45,6 @@ function ConditionListPage() {
     }
   }, [searchTerm]);
 
-  useEffect(() => {
-    console.log("In ConditionListPage, the API_URL is:", API_URL);
-  }, []);
-
   const handleImagesClick = (conditionId: number) => {
     axios
       .get(`${API_URL}/conditions/${conditionId}/images`)
@@ -96,7 +92,8 @@ function ConditionListPage() {
                 key={condition.id}
                 className="d-flex justify-content-between align-items-center mb-2"
               >
-                <Link to={`/conditions/${condition.id}`}>
+                <Link to={`/conditions/${condition.id}`}
+                className="condition-link">
                   <strong>{condition.condition_name}</strong>
                 </Link>
                 <Button
