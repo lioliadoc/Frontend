@@ -96,7 +96,7 @@ function ConditionPage() {
                       href={ref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ textDecoration: 'underline', color: '#007bff' }}
+                      style={{ textDecoration: 'underline', color: '#00008B' }}
                     >
                       {ref}
                     </a>
