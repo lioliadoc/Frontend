@@ -127,7 +127,7 @@ function StoriesPage() {
               />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="secondary" type="submit">
               Submit Story
             </Button>
           </Form>
