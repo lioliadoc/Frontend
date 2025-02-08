@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Spinner, Alert, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
+import './ConditionListPage.css';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
