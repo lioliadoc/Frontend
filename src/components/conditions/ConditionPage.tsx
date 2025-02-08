@@ -85,7 +85,6 @@ function ConditionPage() {
             <strong>Description:</strong> {condition.description}
           </p>
 
-          {/* Display references as clickable URLs */}
           <div style={{ margin: '1rem 0' }}>
             <strong>References:</strong>
             {referenceLinks.length > 0 ? (
