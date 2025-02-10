@@ -157,8 +157,8 @@ function StoriesPage() {
               <p className="text-muted">You must log in to share a story.</p>
               <Button
                 variant="outline-primary"
-                // onClick={() => window.location.href = `${API_URL}/login/force-login`}
-                onClick={() => window.location.href = `${API_URL}/google/authorized`}
+                onClick={() => window.location.href = `${API_URL}/login/force-login`}
+            
               >
                 Log In via Google
               </Button>
