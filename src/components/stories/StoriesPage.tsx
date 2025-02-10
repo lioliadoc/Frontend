@@ -3,7 +3,7 @@ import axios from "axios";
 import { Container, Row, Col, Form, Button, ListGroup } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://mamaskin-backend.herokuapp.com";
+const API_URL = import.meta.env.VITE_API_URL
 
 interface Story {
   id: number;
@@ -24,7 +24,6 @@ function StoriesPage() {
   const [stories, setStories] = useState<Story[]>([]);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // On mount
   useEffect(() => {
     checkAuthStatus();
     fetchAllStories();
@@ -122,7 +121,6 @@ function StoriesPage() {
   return (
     <Container fluid className="py-4">
       <Row>
-        {/* LEFT SIDE */}
         <Col xs={12} md={6} className="mb-4">
           <h2>Add Your Story</h2>
           {errorMessage && <p className="text-danger">{errorMessage}</p>}
@@ -157,7 +155,6 @@ function StoriesPage() {
           ) : (
             <div>
               <p className="text-muted">You must log in to share a story.</p>
-              {/* This button leads to your Google OAuth flow on your back end */}
               <Button
                 variant="outline-primary"
                 onClick={() => window.location.href = `${API_URL}/login/force-login`}
@@ -168,7 +165,6 @@ function StoriesPage() {
           )}
         </Col>
 
-        {/* RIGHT SIDE */}
         <Col xs={12} md={6}>
           <h2>All Stories</h2>
           {stories.length === 0 ? (
