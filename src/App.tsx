@@ -4,6 +4,7 @@ import HomePage from './components/home/HomePage';
 import ConditionListPage from './components/conditions/ConditionListPage';
 import ConditionPage from './components/conditions/ConditionPage';
 import StoriesPage from './components/stories/StoriesPage';
+import LoginRedirect from './components/login/LoginRedirect'; 
 import './index.css'; 
 
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/conditions" element={<ConditionListPage />} />
         <Route path="/conditions/:conditionId" element={<ConditionPage />} />
         <Route path="/stories" element={<StoriesPage />} />
+        <Route path="/login" element={<LoginRedirect />} />
       </Routes>
     </BrowserRouter>
   );
