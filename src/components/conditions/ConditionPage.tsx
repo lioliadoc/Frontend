@@ -44,6 +44,20 @@ function ConditionPage() {
   if (loading) {
     return (
       <Container className="my-5 text-center" style={{ fontSize: '1.2rem' }}>
+        <Row className="mb-4">
+          <Col>
+            <h1
+              style={{
+                fontFamily: "'Pacifico', cursive",
+                fontSize: '5rem',
+                cursor: 'pointer',
+              }}
+              onClick={() => navigate('/')}
+            >
+              MamaSkin
+            </h1>
+          </Col>
+        </Row>
         <Spinner animation="border" variant="secondary" />
         <p className="mt-3">Loading condition details...</p>
       </Container>
@@ -53,6 +67,20 @@ function ConditionPage() {
   if (error) {
     return (
       <Container className="my-5" style={{ fontSize: '1.2rem' }}>
+        <Row className="mb-4">
+          <Col>
+            <h1
+              style={{
+                fontFamily: "'Pacifico', cursive",
+                fontSize: '5rem',
+                cursor: 'pointer',
+              }}
+              onClick={() => navigate('/')}
+            >
+              MamaSkin
+            </h1>
+          </Col>
+        </Row>
         <Alert variant="danger">{error}</Alert>
         <Button variant="outline-secondary" onClick={() => navigate(-1)}>
           Go Back
@@ -64,6 +92,20 @@ function ConditionPage() {
   if (!condition) {
     return (
       <Container className="my-5" style={{ fontSize: '1.2rem' }}>
+        <Row className="mb-4">
+          <Col>
+            <h1
+              style={{
+                fontFamily: "'Pacifico', cursive",
+                fontSize: '5rem',
+                cursor: 'pointer',
+              }}
+              onClick={() => navigate('/')}
+            >
+              MamaSkin
+            </h1>
+          </Col>
+        </Row>
         <Alert variant="warning">No condition found.</Alert>
         <Button variant="outline-secondary" onClick={() => navigate(-1)}>
           Go Back
@@ -75,7 +117,22 @@ function ConditionPage() {
   const referenceLinks = parseReferences(condition.references);
 
   return (
+    
     <Container className="my-5" style={{ fontSize: '1.2rem' }}>
+       <Row className="mb-4">
+        <Col>
+          <h1
+            style={{
+              fontFamily: "'Pacifico', cursive",
+              fontSize: '5rem',
+              cursor: 'pointer',
+            }}
+            onClick={() => navigate('/')}
+          >
+            MamaSkin
+          </h1>
+        </Col>
+      </Row>
       <Row>
         <Col>
           <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
