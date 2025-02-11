@@ -78,7 +78,13 @@ function HomePage() {
               How to search a condition
             </Button>
           </div>
-
+          <Row className="justify-content-center mt-4">
+            <Col xs="auto">
+              <a href="/stories" className="text-decoration-none text-secondary">
+                Share Your Pregnancy Story
+              </a>
+            </Col>
+          </Row>
           
           <Row className="justify-content-center mt-3">
             <Col xs="auto">
