@@ -5,7 +5,7 @@ import ConditionListPage from './components/conditions/ConditionListPage';
 import ConditionPage from './components/conditions/ConditionPage';
 import StoriesPage from './components/stories/StoriesPage';
 import LoginRedirect from './components/login/LoginRedirect'; 
-import SkincareTipsPage from './components/skincare-info/SkincareTipsPage';
+import SkincareTipsPage from './components/skincare_info/SkincareTipsPage';
 import './index.css'; 
 
 
