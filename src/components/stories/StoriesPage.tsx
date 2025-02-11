@@ -120,6 +120,20 @@ function StoriesPage() {
 
   return (
     <Container fluid className="py-4">
+      <Row className="mb-4">
+        <Col>
+          <h1
+            style={{
+              fontFamily: "'Pacifico', cursive",
+              fontSize: "5rem",
+              cursor: "pointer",
+            }}
+            onClick={() => navigate("/")}  // Redirect to homepage
+          >
+            MamaSkin
+          </h1>
+        </Col>
+      </Row>
       <Row>
         <Col xs={12} md={6} className="mb-4">
           <h2>Add Your Story</h2>
