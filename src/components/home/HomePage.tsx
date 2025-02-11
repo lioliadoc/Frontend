@@ -81,7 +81,7 @@ function HomePage() {
           <Row className="justify-content-center mt-4">
             <Col xs="auto">
               <a href="/stories" className="text-decoration-none text-secondary">
-                Share Your Pregnancy Story
+              Share your pregnancy skin condition story
               </a>
             </Col>
           </Row>
@@ -101,11 +101,6 @@ function HomePage() {
                 className="text-decoration-none text-secondary"
               >
                 Educational Resources
-              </a>
-            </Col>
-            <Col xs="auto">
-              <a href="/stories" className="text-decoration-none text-secondary">
-                Stories
               </a>
             </Col>
           </Row>
