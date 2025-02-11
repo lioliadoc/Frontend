@@ -1,9 +1,25 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 function SkincareTipsPage() {
+    const navigate = useNavigate();
   return (
     <Container className="my-4">
+        <Row className="mb-4">
+        <Col>
+          <h1
+            style={{
+              fontFamily: "'Pacifico', cursive",
+              fontSize: "5rem",
+              cursor: "pointer",
+            }}
+            onClick={() => navigate("/")}
+          >
+            MamaSkin
+          </h1>
+        </Col>
+      </Row>
       <Row>
         <Col>
           <h1>Tips for Skincare Routines During Pregnancy</h1>
