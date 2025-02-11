@@ -84,7 +84,7 @@ function ConditionListPage() {
       
       <Row className="mb-3">
         <Col>
-          <h4>Search results for "{searchTerm}"</h4>
+          <h4 className="mb-4">Search results for "{searchTerm}"</h4>
           {errorMessage && <p className="text-danger">{errorMessage}</p>}
           {conditions.length > 0 ? (
             conditions.map((condition) => (
