@@ -12,6 +12,7 @@ const API_URL = import.meta.env.VITE_API_URL;
 interface Condition {
   id: number;
   condition_name: string;
+  description: string;
 }
 
 function ConditionListPage() {
@@ -23,6 +24,13 @@ function ConditionListPage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [selectedImages, setSelectedImages] = useState<string[]>([]);
   const [showModal, setShowModal] = useState(false);
+
+function getFirstWords(text: string, wordCount: number = 50) {
+  if (!text) return "";
+  const words = text.split(/\s+/);         
+  const sliced = words.slice(0, wordCount); 
+  return sliced.join(" ") + (words.length > wordCount ? "..." : "");
+}
 
   useEffect(() => {
     if (searchTerm) {
@@ -96,6 +104,9 @@ function ConditionListPage() {
                 className="condition-link">
                   <strong>{condition.condition_name}</strong>
                 </Link>
+                <p>
+                  {getFirstWords(condition.description, 50)}
+                </p>
                 <Button
                   variant="link"
                   className="text-secondary"
