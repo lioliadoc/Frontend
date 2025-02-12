@@ -128,7 +128,7 @@ function StoriesPage() {
               fontSize: "5rem",
               cursor: "pointer",
             }}
-            onClick={() => navigate("/")}  // Redirect to homepage
+            onClick={() => navigate("/")}  
           >
             MamaSkin
           </h1>
