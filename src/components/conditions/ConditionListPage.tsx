@@ -96,26 +96,27 @@ function getFirstWords(text: string, wordCount: number = 50) {
           {errorMessage && <p className="text-danger">{errorMessage}</p>}
           {conditions.length > 0 ? (
             conditions.map((condition) => (
-              <div
-                key={condition.id}
-                className="d-flex justify-content-between align-items-center mb-2"
-              >
-                <Link to={`/conditions/${condition.id}`}
-                className="condition-link">
+              <div key={condition.id} className="mb-3">
+                <div className="d-flex justify-content-between align-items-center">
+                  <Link to={`/conditions/${condition.id}`}
+                  className="condition-link">
                   <strong>{condition.condition_name}</strong>
-                </Link>
-                <p>
-                  {getFirstWords(condition.description, 50)}
-                </p>
-                <Button
-                  variant="link"
-                  className="text-secondary"
-                  onClick={() => handleImagesClick(condition.id)}
-                >
-                  Images
-                </Button>
-              </div>
-            ))
+                  </Link>
+                
+                  <Button
+                    variant="link"
+                    className="text-secondary"
+                    onClick={() => handleImagesClick(condition.id)}
+                  >
+                    Images
+                  </Button>
+                </div>
+              <p className="mt-2">
+              {getFirstWords(condition.description, 50)}
+            </p>
+          </div>
+            
+          ))
           ) : (
             <p>No conditions found.</p>
           )}
